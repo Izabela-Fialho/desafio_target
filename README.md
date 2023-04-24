@@ -30,7 +30,8 @@ Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor semp
 IMPORTANTE:
 Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código;
 
-### Solução: def q2(num):
+### Solução: 
+    def q2(num):
     n1 = 0
     n2 = 1
     n3 = 0
@@ -49,12 +50,12 @@ Esse número pode ser informado através de qualquer entrada de sua preferência
 
 Questão 3:
 Descubra a lógica e complete o próximo elemento:
-a) 1, 3, 5, 7, __ 
-b) 2, 4, 8 ,16 32 , 64, __ 
-c) 0, 1, 4, 9, 16, 25, 36, __
-d) 4, 16, 36, 64, __
-e) 1, 1, 2, 3, 5, 8, __
-f) 2, 10, 12, 16, 17, 18, 19, __
+a. 1, 3, 5, 7, __ 
+b. 2, 4, 8 ,16 32 , 64, __ 
+c. 0, 1, 4, 9, 16, 25, 36, __
+d. 4, 16, 36, 64, __
+e. 1, 1, 2, 3, 5, 8, __
+f. 2, 10, 12, 16, 17, 18, 19, __
 
 ### Solução:
     def q3(alternativa):    
@@ -88,16 +89,37 @@ f) 2, 10, 12, 16, 17, 18, 19, __
 Questão 4:
 Dois veículos (um carro e um caminhão) saem respectivamente de cidades opostas pela mesma rodovia. O carro de Riberão Preto em direção a Franca, a uma velocidade constante de 110km/h e o caminhão de Franca em direção a Riberão Preto a uma velocidade constante de 80km/h. Quando eles se cruzarem na rodovia, qual estará mais próximo a cidade de Riberão Petro?
 
+### Solução:
+Considerando a cidade de Ribeirão Preto o ponto inicial (0 km) e a cidade de Franca o ponto final (100km), temos que a posição inicial do carro é igual a 0 km e a posição inicial do caminhão é de 100km.
+
+    s_carro = 0
+    s_caminhao = 100
+Segundo o enunciado o carro está a uma velocidade constante de 110km/h e o caminhão está a uma velocidade constante de 80km/h, ou seja, sem realizar nenhuma parada os veículos possuem essas velocidades respectivamente.
+
+    vel_carro = 110
+    vel_caminhao = 80
+Como o caminhão realizou duas paradas de 5 minutos, o total de tempo parado foi de 10min. Assim, precisamos calcular a velocidade média do caminhão considerando as paradas.
+    
+    tempo_sem_parada = s_caminhao/vel_caminhao
+    tempo_com_parada = (tempo_parada/60) + tempo_sem_parada
+    vel_caminhao = s_caminhao/tempo_com_parada
+Considerando que os veículos tenham saído ao mesmo tempo, vamos calcular o tempo que levaram para chegar ao ponto de encontro.
+   
+    tempo_encontro = (s_caminhao - s_carro)/(vel_carro + vel_caminhao)
+Como o caminhão e o carro se encontram no mesmo ponto referente a origem (Ribeirão Preto), então os veículos estão a mesma distância de Ribeirão Preto.
+   
+    encontro = vel_carro * tempo_encontro
+
 
 Questão 5:
 Escreva um programa que inverta os caracteres de um string.
 
 IMPORTANTE:
-a) Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
-b) Evite usar funções prontas, como, por exemplo, reverse;
+a. Essa string pode ser informada através de qualquer entrada de sua preferência ou pode ser previamente definida no código;
+b. Evite usar funções prontas, como, por exemplo, reverse;
 
 ### Solução:
-    stringEntrada = input("5) Digite um texto para que tenha os cracteres invertidos: ")
+    stringEntrada = input("5) Digite um texto para que tenha os caracteres invertidos: ")
 
     stringInvertida = ""
     for i in range(len(stringEntrada) - 1, -1, -1):
