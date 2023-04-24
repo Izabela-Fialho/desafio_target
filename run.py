@@ -1,5 +1,5 @@
 
-from module import q1,q2 ,q3 ,q4
+from desafio_target.module import q1,q2 ,q3 ,q4
  
 print('\n')
 print('Questão 1')
