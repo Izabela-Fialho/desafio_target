@@ -54,14 +54,14 @@ def q3(alternativa):
         print(f'O próximo elemento será: {lista[len(lista)-1]}')
 
 def q4(a):
-    vel_carro = 110
-    vel_caminhao = 80
     s_carro = 0
     s_caminhao = 100
+    vel_carro = 110
+    vel_caminhao = 80
     tempo_parada = 10
     tempo_sem_parada = s_caminhao/vel_caminhao
     tempo_com_parada = (tempo_parada/60) + tempo_sem_parada
     vel_caminhao = s_caminhao/tempo_com_parada
-    tempo_encontro = s_caminhao/(vel_carro + vel_caminhao)
+    tempo_encontro = (s_caminhao - s_carro)/(vel_carro + vel_caminhao)
     encontro = vel_carro * tempo_encontro
     print(f'O carro e caminhão se cruzarão a uma distância de {round(encontro,2)}km de Ribeirão Preto')
